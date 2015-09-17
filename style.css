@@ -1,19 +1,14 @@
-.panel2Heading{
-	font-weight: bold;
-}
-.roster{
+.center{
 	width: 85%;
 	margin: auto;
 	padding: 10pt;
 	text-align: center;
 }
-.removeButton{
+.remove-button{
 	padding: 1pt;
 	font-size: 8pt;
-}
-.centerDiv{
-	margin: auto;
-	width: 35%;
+	width: 45px;
+	text-align: center;
 }
 .glyphFont{
 	font-family: cursive;

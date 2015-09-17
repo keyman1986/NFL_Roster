@@ -15,7 +15,7 @@
       <div class="panel-heading">
         <h3>NFL Team Roster</h3></div>
       <div class="panel-body roster">
-        <div class="row">
+        <!--<div class="row">
           <div class="col-xs-6 col-sm-4">
             <div class="centerDiv"><button class="btn btn-danger removeButton">Remove</button></div>
             <div><img src="player.png" alt="Person 1"></div>
@@ -38,8 +38,8 @@
             <div>Position</div>
             <div>Number</div>
           </div>
-        </div>
-        </br>
+        </div>-->
+        <!--</br>
         </br>
         </br>
         <div class="row">
@@ -65,21 +65,23 @@
             <div>Position</div>
             <div>Number</div>
           </div>
-        </div>
+        </div>-->
 
       </div>
-      <div class="lowerDivs">
+      <div>
         <div class="panel panel-warning">
           <div class="panel-heading panel2Heading glyphicon glyphicon-plus-sign"><span class="glyphFont">Add Player</span></div>
           <div class="panel-body">
-            <form action="">
+            <form id="addPlayerForm">
               <div>Player name:</div>
               <div><input type="text" size="50"/></div>
               <div>Player Position:</div>
-              <div><input type="text" size="30"/></div>
+              <div><select id="positions"><option></option></select></div>
               <div>Player Number:</div>
-              <div><input type="number" size="10"/></div><br/>
+              <div><input type="number" max="99"/></div><br/>
               <div><button class="btn btn-default glyphicon glyphicon-plus-sign" id="addPlayerButton"><span class="glyphFont">Add To Team<span></button></div>
+              <div><h3>Or fetch players from an external source.</h3></div>
+              <div><button class="btn btn-success" id="fetchButton">Fetch players</button></div>
             </form>
           </div>
         </div>
