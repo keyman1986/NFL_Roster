@@ -16,9 +16,8 @@ $("#addPlayerButton").on('click',function(e){
 });
 
 
-
 $('.roster').on('click', '.remove-button', function(e){
 	e.preventDefault();
 	$(this).parent().remove()
-	
 });
+
