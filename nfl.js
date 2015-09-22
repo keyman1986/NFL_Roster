@@ -1,4 +1,3 @@
-
 var position = document.getElementById("positions"); 
 var options = ["Front", "Center", "Middle", "Ball Holder", "Water Boy"]; 
 
@@ -21,3 +20,35 @@ $('.roster').on('click', '.remove-button', function(e){
 	$(this).parent().remove()
 });
 
+var playerService = function() {
+    
+    var _players = [];
+    
+    return {
+        loadPlayers: function(cb) {
+        var url = "http://bcw-getter.herokuapp.com/?url=";
+        var url2 = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
+        var apiUrl = url + encodeURIComponent(url2);
+        $.getJSON(apiUrl, function(response) {
+            _players = response.body.players;
+            
+            cb();
+        })
+        },
+        getPlayers: function() {
+        return _players.slice();
+        },
+        getPlayersByTeam: function(team) {
+        var requestedTeam = _players.filter(function(player) {
+            if (player.pro_team === team) {
+            return true;
+            }
+        })
+        return requestedTeam;
+        }
+    }
+};
+var ps = playerService()
+ps.loadPlayers(function(){
+    console.log('Done');    
+});
